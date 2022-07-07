@@ -1,11 +1,31 @@
-import { Text, View } from 'react-native';
+import { Text, View, Pressable, StyleSheet } from "react-native";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
+  const onPressFunction = () => {
+    navigation.navigate("Profile");
+  };
+
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={styles.container}>
       <Text>Home Screen</Text>
+      <Pressable onPress={onPressFunction} style={styles.button}>
+        <Text style={styles.buttonText}>Go to Profile</Text>
+      </Pressable>
     </View>
   );
-}
+};
 
 export default HomeScreen;
+
+const styles = StyleSheet.create({
+  container: { flex: 1, alignItems: "center", justifyContent: "center" },
+  button: {
+    padding: 12,
+    backgroundColor: "blue",
+    borderRadius: 4,
+    marginTop: 8,
+  },
+  buttonText: {
+    color: "white",
+  },
+});
