@@ -7,7 +7,6 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text>Home Screen</Text>
       <Pressable onPress={onPressFunction} style={styles.button}>
         <Text style={styles.buttonText}>Go to Profile</Text>
       </Pressable>
@@ -18,7 +17,7 @@ const HomeScreen = ({ navigation }) => {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: "center", justifyContent: "center" },
+  container: { flex: 1, alignItems: "center" },
   button: {
     padding: 12,
     backgroundColor: "blue",
