@@ -1,4 +1,6 @@
 import { Text, View, Pressable, StyleSheet } from "react-native";
+import Food from "./Food";
+import { food } from "../constant";
 
 const HomeScreen = ({ navigation }) => {
   const onPressFunction = () => {
@@ -10,6 +12,9 @@ const HomeScreen = ({ navigation }) => {
       <Pressable onPress={onPressFunction} style={styles.button}>
         <Text style={styles.buttonText}>Go to Profile</Text>
       </Pressable>
+      {food.map((foodItem) => (
+        <Food foodItem={foodItem} />
+      ))}
     </View>
   );
 };
@@ -22,7 +27,7 @@ const styles = StyleSheet.create({
     padding: 12,
     backgroundColor: "blue",
     borderRadius: 4,
-    marginTop: 8,
+    marginVertical: 8,
   },
   buttonText: {
     color: "white",
